@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Modal Login</h2>
+  <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Registrate</button>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+
+      <div class="modal-body">
+
+
+        <div class="authform">
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+            <h3>Sign up</h3>
+            <%= devise_error_messages! %>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+             <%= f.submit 'Sign up', :class => 'button right' %>
+          <% end %>
+        </div>
+
+        </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
