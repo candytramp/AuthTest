@@ -1,13 +1,10 @@
-= form_for @room do |f|
-  - if @room.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@room.errors.count, "error")} prohibited this room from being saved:"
-      %ul
-        - @room.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(@room) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :number, in: 10...1000
+  .form-actions
+    = f.button :submit
 
-  .field
-    = f.label :number
-    = f.number_field :number
-  .actions
-    = f.submit 'Save'
+
+
+
