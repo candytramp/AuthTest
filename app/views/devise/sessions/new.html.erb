@@ -1,5 +1,7 @@
-<div class="col-sm-4" style="left:0%; margin-left:35%;">
-  <div class="authform">
+<div class='row'>
+  <div class='col-md-4'></div>
+  <div class='col-md-4'>
+      <div class="authform">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
       <h3>Sign in</h3>
       <%= devise_error_messages! %>
@@ -17,7 +19,7 @@
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
-        <%= f.submit 'Sign in', :class => 'button right' %>
+        <%= f.submit 'Sign in', :class => 'btn btn-default' %>
         <% if devise_mapping.rememberable? -%>
           <div class="checkbox" style="width:150px">
             <label>
@@ -27,4 +29,9 @@
         <% end -%>
     <% end %>
   </div>
+  </div>
+  <div class='col-md-4'></div>
 </div>
+
+
+
